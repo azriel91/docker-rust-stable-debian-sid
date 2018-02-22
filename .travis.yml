@@ -1,0 +1,15 @@
+sudo: required
+services:
+- docker
+
+# env:
+#   matrix:
+#     secure: TODO
+
+script: docker build .
+
+# after_success: |
+#   if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then
+#     curl -sS -H "Content-Type: application/json" --data '{"build": true}' -X POST \
+#       https://registry.hub.docker.com/u/azriel91/rust_stable_debian_sid/trigger/${TRIGGER_TOKEN}/
+#   fi
